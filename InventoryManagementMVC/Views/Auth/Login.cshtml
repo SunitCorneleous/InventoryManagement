@@ -1,6 +1,7 @@
 ﻿@{
     Layout = null;
 }
+@model InventoryManagementMVC.Models.User
 
 <!DOCTYPE html>
 
@@ -11,7 +12,19 @@
 </head>
 <body>
     <div>
-        <h1>Login Page</h1>
+        @using (Html.BeginForm("Login", "Auth", FormMethod.Post))
+        {
+            <div>
+                <div>
+                    User Name
+                    @Html.TextBoxFor(m => m.UserName)
+                </div>
+                <div>
+                    Password
+                    @Html.TextBoxFor(m => m.Password)
+                </div>
+            </div>
+        }
     </div>
 </body>
 </html>
