@@ -12,6 +12,11 @@ namespace InventoryManagementMVC.Controllers.Auth
         // GET: Auth
         public ActionResult Login()
         {
+            
+            if (Session["User"] != null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             ViewBag.Message = "";
             return View();
         }
