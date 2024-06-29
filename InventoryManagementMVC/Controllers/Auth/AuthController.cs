@@ -12,7 +12,7 @@ namespace InventoryManagementMVC.Controllers.Auth
         // GET: Auth
         public ActionResult Login()
         {
-            
+
             if (Session["User"] != null)
             {
                 return RedirectToAction("Index", "Home");
@@ -36,6 +36,16 @@ namespace InventoryManagementMVC.Controllers.Auth
                 ViewBag.Message = "User Login Failed";
                 return View();
             }
+        }
+
+        //Post: Logout User
+        [HttpPost]
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            Session.Abandon();
+
+            return Json(new { success = true });
         }
     }
 }
