@@ -14,6 +14,7 @@ namespace InventoryManagementMVC.Controllers
             {
                 return RedirectToAction("Login", "Auth");
             }
+            ViewBag.Title = "Inventory Home";
             return View();
         }
     }

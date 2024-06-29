@@ -18,6 +18,7 @@ namespace InventoryManagementMVC.Controllers.Auth
                 return RedirectToAction("Index", "Home");
             }
             ViewBag.Message = "";
+            ViewBag.Title = "Inventory Login";
             return View();
         }
 
